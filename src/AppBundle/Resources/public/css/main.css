@@ -1,0 +1,14 @@
+.currency
+{
+    border: 1px solid #eee;
+    border-radius: 5px;
+    color: #575757;
+    margin: 5px 0;
+}
+
+.currency-header
+{
+    text-align: center;
+    font-size: 40px;
+    border-bottom: 1px solid #eee;
+}

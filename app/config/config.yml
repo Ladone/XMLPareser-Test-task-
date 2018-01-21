@@ -64,3 +64,28 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        [ AppBundle ]
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+    assets:
+        jquery:
+            inputs: %kernel.root_dir%/../vendor/components/jquery/jquery.min.js
+            output: "js/jquery.js"
+        twbs_js:
+            inputs: %kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js
+            output: "js/bootstrap.min.js"
+        jquery_mask_js:
+            inputs: %kernel.root_dir%/../vendor/igorescobar/jquery-mask-plugin/dist/jquery.mask.min.js
+            output: "js/jquery.mask.min.js"
+        twbs_css:
+            inputs: %kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css
+            output: "css/bootstrap.min.css"
+        main_css:
+            inputs: %kernel.root_dir%/../src/AppBundle/Resources/public/css/main.css
+            output: "css/main.css"
+

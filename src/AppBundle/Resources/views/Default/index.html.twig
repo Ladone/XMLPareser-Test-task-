@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('homepage') }}">Currency of National Bank Ukraine</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <form class="navbar-form navbar-left" method="GET">
+                    <div class="form-group">
+                        <input type="text" id="date" name="date" class="form-control" placeholder="Enter date" value="">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+
+        {% if currencies != none %}
+            {% for currency in currencies %}
+                <div class="col-md-2 currency">
+                    <div class="currency-header">{{ currency.code.code }}</div>
+                    <span class="price"><b>Price:</b> {{ currency.value }}</span><br>
+                    <span class="date"><b>Date:</b> {{ currency.date|date('d.m.Y') }}</span>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1>No data for the given date</h1>
+        {% endif %}
+
+
+    </div>
+
+{% endblock %}

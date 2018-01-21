@@ -14,8 +14,10 @@
     },
     "require": {
         "php": ">=5.3.9",
+        "components/jquery": "2.*",
         "doctrine/doctrine-bundle": "~1.4",
         "doctrine/orm": "^2.4.8",
+        "igorescobar/jquery-mask-plugin": "^1.14",
         "incenteev/composer-parameter-handler": "~2.0",
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "^3.0.2",

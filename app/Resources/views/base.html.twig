@@ -5,8 +5,24 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% stylesheets
+            '@twbs_css'
+            '@main_css'
+        %}
+        <link rel="stylesheet" type="text/css" href="{{ asset_url }}"  media="all" />
+        {% endstylesheets %}
+
+                {% javascripts
+                    '@jquery'
+                    '@twbs_js'
+                    '@jquery_mask_js'
+                    '@AppBundle/Resources/public/js/*'
+                %}
+                <script src="{{ asset_url }}"></script>
+                {% endjavascripts %}
     </head>
     <body>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
